@@ -1,0 +1,56 @@
+[
+    {
+        "ttl": "学習アウトプットサイト",
+        "charge": "Frontend",
+        "src": "./images/portfolio_img_1.png",
+        "url": "https://gipyklion.web.fc2.com/top43/top43_cp.html"
+    },
+    {
+        "ttl": "学習アウトプットサイト",
+        "charge": "Frontend",
+        "src": "./images/portfolio_img_2.png",
+        "url": "https://gipyklion.web.fc2.com/top44/top44_cp.html"
+    },
+    {
+        "ttl": "しゃちんぼの濱",
+        "charge": "Frontend",
+        "src": "./images/portfolio_img_3.png",
+        "url": "https://growup.main.jp/yamanokuchi3/"
+    },
+    {
+        "ttl": "湯ライフ",
+        "charge": "Frontend",
+        "src": "./images/portfolio_img_4.png",
+        "url": "https://growup.main.jp/yamanokuchi4/"
+    },
+    {
+        "ttl": "TAKUMI GYM",
+        "charge": "Frontend / Design",
+        "src": "./images/portfolio_img_5.png",
+        "url": "https://www.takumi-gym.com/"
+    },
+    {
+        "ttl": "エス・ティー・プランニング",
+        "charge": "Frontend",
+        "src": "./images/portfolio_img_8.png",
+        "url": "https://www.stplanning.jp/"
+    },
+    {
+        "ttl": "神宮部品商会",
+        "charge": "Frontend",
+        "src": "./images/portfolio_img_6.png",
+        "url": "https://www.jingu-parts.com/"
+    },
+    {
+        "ttl": "旧ポートフォリオ",
+        "charge": "Frontend / Design",
+        "src": "./images/portfolio_img_7.png",
+        "url": "https://yk-react-portfolio.netlify.app/"
+    },
+    {
+        "ttl": "コード実験サイト",
+        "charge": "Frontend / Design",
+        "src": "./images/portfolio_img_9.png",
+        "url": "https://yk-code-laboratory.netlify.app"
+    }
+]

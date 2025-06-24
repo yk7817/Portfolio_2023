@@ -1,0 +1,477 @@
+// ress.css
+@import url(https://unpkg.com/ress/dist/ress.min.css);
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100;300;400;500;700&family=M+PLUS+1p:wght@300;400;500;700&display=swap');
+
+// variable
+/* color */
+$white: #c0c0c0;
+$white-light: #e8e8e8;
+$black: rgb(24, 24, 24);
+$blue-dark: rgb(19, 32, 70);
+
+/* font-family */
+$bitter: 'Bitter', serif;
+$m-plus-1: 'M PLUS 1p', sans-serif;
+
+// mixin
+@mixin breakpoint($terminal) {
+    @if $terminal == sp {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $terminal == tab {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+// JS
+
+// Base
+html {
+    font-family: $m-plus-1;
+    letter-spacing: 1px;
+}
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+a {
+    color: $white;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+.section_ttl {
+    font-family: $bitter;
+    h1 {
+        font-weight: 300;
+        font-size: 5rem;
+        @include breakpoint(tab) {
+            font-size: 4rem;
+        }
+        @include breakpoint(sp) {
+            font-size: 8vw;
+        }
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 6rem;
+        @include breakpoint(tab) {
+            font-size: 4.5rem;
+        }
+        @include breakpoint(sp) {
+            font-size: 7vw;
+        }
+    }
+}
+// Container
+.container {
+    z-index: 0;
+    overflow: hidden;
+}
+// Main Visual
+.mv {
+    position: relative;
+    background-color: $black;
+    &_inner {
+        height: 100vh;
+    }
+    &_ttl {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        color: $white;
+        font-family: $bitter;
+        mix-blend-mode: difference;
+        &-sub {
+            display: inline-block;
+            font-size: 3rem;
+            @include breakpoint(sp) {
+                font-size: 6vw;
+            }
+        }
+    }
+}
+
+// Main Contenets
+.main {
+    line-height: 1.6;
+}
+
+// Profile
+.profile {
+    background-color: $blue-dark;
+    &_inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        gap: 5rem;
+        margin: 0 auto;
+        padding: 5rem 0;
+        color: $white;
+        @include breakpoint(tab) {
+            display: block;
+        }
+    }
+    &_ttl {
+        align-self: stretch;
+    }
+    &_description {
+        @include breakpoint(sp) {
+            margin: 10px 0 0 0;
+            line-height: 2;
+        }
+        &_item {
+            display: flex;
+            font-size: 1.13rem;
+            font-family: $m-plus-1;
+            @include breakpoint(sp) {
+                font-size: 0.81rem;
+            }
+            dt {
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+// Work
+.work {
+    background-color: $black;
+    &_inner {
+        position: relative;
+        width: 90vw;
+        padding: 5rem 0;
+        margin: 0 auto;
+        color: $white;
+    }
+    &_details {
+        width: 50vw;
+        margin: 0 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        @include breakpoint(sp) {
+            width: 100%;
+        }
+    }
+    &_ttl {
+        position: sticky;
+        top: 0vw;
+        left: 50px;
+        z-index: 1;
+        @include breakpoint(sp) {
+            width: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            background-color: $black;
+        }
+    }
+    &_card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4vw;
+        @include breakpoint(tab) {
+            display: block;
+        }
+    }
+    &_info_text {
+        min-width: 25%;
+        text-align: end;
+        @include breakpoint(tab) {
+            text-align: left;
+            margin: 0 0 15px;
+        }
+        dl {
+            dt {
+                font-size: 1.2rem;
+                font-weight: 500;
+                @include breakpoint(sp) {
+                    font-size: 1rem;
+                }
+            }
+            dd {
+                @include breakpoint(sp) {
+                    font-size: 0.81rem;
+                }
+            }
+        }
+    }
+    &_link {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+// Future
+.future {
+    background-color: $white-light;
+    &_inner {
+        width: 90vw;
+        padding: 5rem 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    &_ttl {
+        text-align: left;
+    }
+    &_description {
+        @include breakpoint(sp) {
+            font-size: 0.81rem;
+        }
+    }
+}
+.mouse_stalker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 0.2s;
+}
+
+// Return Top
+.return_top {
+    position :relative;
+    height: 50px;
+    background-color: $black;
+    cursor: pointer;
+    &::before {
+        position: absolute;
+        content: "";
+        top: -15px;
+        left: 50%;
+        transform: translate(-50%) rotate(-45deg);
+        border-top: 20px solid $black;
+        border-right: 20px solid $black;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid transparent;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        top: -5px;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%) rotate(-45deg);
+        border-top: 2px solid $white;
+        border-right: 2px solid $white;
+    }
+}
+
+//JavaScript
+.is-fixed {
+    position: fixed;
+}
+
+// grid animation
+.is-grid {
+    position: relative;
+    animation: glitchText 5s infinite;
+    &::before {
+        position: absolute;
+        content: attr(title);
+        width: 100%;
+        top: 0px;
+        left: -3px;
+        color: rgb(255, 0, 255);
+        opacity: 0;
+        animation: glitchShadow1 5s infinite;
+    }
+    &::after {
+        position: absolute;
+        content: attr(title);
+        width: 100%;
+        top: 0px;
+        left: 3px;
+        color: rgb(0, 153, 255);
+        opacity: 0;
+        animation: glitchShadow2 5s infinite;
+    }
+}
+
+@keyframes glitchText {
+    8%{
+        filter: none;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    9%{
+        filter: blur();
+        transform: matrix(1, 0, 2, 1, -3, 0);
+    }
+    10% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    11%{
+        filter: none;
+    }
+    28%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    29%{
+        transform: matrix(1, 0, -5, 1, 3, 0);
+    }
+    30%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    58%{
+        filter: none;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    59%{
+        filter: blur();
+        transform: matrix(1, 0, -2, 1, -3, 0);
+    }
+    60%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    61%{
+        filter: none;
+    }
+    89%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    90%{
+        transform: matrix(1, 0, 5, 1, -3, 0);
+    }
+    91%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+}
+
+@keyframes glitchShadow1 {
+    8%{
+        opacity: 0;
+    }
+    9%{
+        top: -3px;
+        opacity: 1;
+    }
+    10%{
+        top: 0;
+        opacity: 1;
+    }
+    11%{
+        opacity: 0;
+    }
+    28%{
+        opacity: 0;
+    }
+    29%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    31%{
+        opacity: 0;
+    }
+    58%{
+        opacity: 0;
+    }
+    59%{
+        top: -2px;
+        opacity: 1;
+    }
+    60%{
+        top: 0;
+        opacity: 1;
+    }
+    61%{
+        opacity: 0;
+    }
+    89%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 1;
+    }
+    91%{
+        opacity: 1;
+    }
+    92%{
+        opacity: 0;
+    }
+}
+
+@keyframes glitchShadow2 {
+    8%{
+        opacity: 0;
+    }
+    9%{
+        top: -3px;
+        opacity: 1;
+    }
+    10%{
+        top: 0;
+        opacity: 1;
+    }
+    11%{
+        opacity: 0;
+    }
+    28%{
+        opacity: 0;
+    }
+    29%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    31%{
+        opacity: 0;
+    }
+    58%{
+        opacity: 0;
+    }
+    59%{
+        top: -2px;
+        opacity: 1;
+    }
+    60%{
+        top: 0;
+        opacity: 1;
+    }
+    61%{
+        opacity: 0;
+    }
+    89%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 1;
+    }
+    91%{
+        opacity: 1;
+    }
+    92%{
+        opacity: 0;
+    }
+}
